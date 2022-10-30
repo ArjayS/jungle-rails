@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_items = @order.line_items #Creating an array using the variable @line_items for a specific order made by user to display @img, @name, @description, @quantity, @line_total
   end
 
   def create
@@ -54,6 +55,10 @@ class OrdersController < ApplicationController
     end
     order.save!
     order
+  end
+
+  def list_order_items order
+    order.map { |item| { name: item.name, quantity: item.quantity, description: item.description } } # looping over a specific order that contains the @img, @name, @description, @quantity, @line_total
   end
 
 end
