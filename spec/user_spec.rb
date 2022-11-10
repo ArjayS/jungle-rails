@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
   #     password: '1234567', 
   #     password_confirmation: '1234567'
   #     )
-  #   @user = User.new(
+  #   @user2 = User.new(
   #     first_name: 'TEST', 
   #     last_name: 'TEST', 
   #     email: 'TEST@TEST.com', 
@@ -82,24 +82,24 @@ RSpec.describe User, type: :model do
   #     )
 
   #   expect(@user).to be_valid
-  #   expect(@user).to_not be_valid
+  #   expect(@user2).to_not be_valid
   # end
 
   describe '.authenticate_with_credentials' do
     # examples for this class method here
 
-    it "creates an account when first and last name, email, and having both the password and password confirmation the same" do
-      @user = User.new(
-        first_name: 'Robert', 
-        last_name: 'Servado', 
-        email: 'robertservado@mail.com', 
-        password: '1234567', 
-        password_confirmation: '1234567'
-        )
-      @user = User.authenticate_with_credentials(@user.email, @user.password)
+    # it "creates an account when first and last name, email, and having both the password and password confirmation the same" do
+    #   @user = User.new(
+    #     first_name: 'Robert', 
+    #     last_name: 'Servado', 
+    #     email: 'robertservado@mail.com', 
+    #     password: '1234567', 
+    #     password_confirmation: '1234567'
+    #     )
+    #   @user = User.authenticate_with_credentials(@user.email, @user.password)
 
-      expect(@user).to be_valid
-    end
+    #   expect(@user).to be_valid
+    # end
 
   end
 end
